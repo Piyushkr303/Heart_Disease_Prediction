@@ -13,8 +13,8 @@ warnings.simplefilter('ignore')
 
 
 # Loading the train & test data -
-train = pd.read_csv(r'/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/train2.csv')
-test = pd.read_csv(r'/Users/kumarpersonal/Downloads/Heart-Disease-Pred/Data/test2.csv')
+train = pd.read_csv('train2.csv')
+test = pd.read_csv('/test2.csv')
 
 
 # Splitting the data into independent & dependent variables -
