@@ -5,3 +5,4 @@ seaborn
 tensorflow
 streamlit
 h5py
+sklearn
