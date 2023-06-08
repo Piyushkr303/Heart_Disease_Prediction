@@ -68,8 +68,8 @@ threshold = 0.60
 y_pred_class = np.where(y_pred_proba > threshold, 1, 0)
 
 
-from keras.utils.vis_utils import plot_model
-plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+#from keras.utils.vis_utils import plot_model
+#plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
 
 plt.figure(figsize=(10, 5))
