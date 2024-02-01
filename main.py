@@ -5,7 +5,7 @@ import streamlit as st
 from modeling import ann_app
 
 def main():
-    st.title('Heart disease prediction using Artificial Neural Networks (ANN)')
+    st.title('CardioCare')
     menu=['Home','Model','About']
     choice=st.sidebar.selectbox('Menu',menu)
     if choice=='Home':
