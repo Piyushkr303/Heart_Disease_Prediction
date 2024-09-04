@@ -202,10 +202,25 @@ def ann_app():
 
 
     with st.expander('Predicted'):
+    try:
         sample = np.array(encoded_results).reshape(1, -1)
         prediction = loaded_model.predict(sample)
-        rounded_prediction = np.around(prediction[0], decimals=2)  # Round the value to 2 decimal places
-        st.success(rounded_prediction[0])
+        
+        # Check if prediction is a list or numpy array and access the first element
+        if isinstance(prediction, (np.ndarray, list)):
+            rounded_prediction = np.around(prediction[0], decimals=2)  # Round the value to 2 decimal places
+        else:
+            # Handle unexpected return types from the model
+            st.error("Unexpected prediction output type.")
+            rounded_prediction = None
+        
+        if rounded_prediction is not None:
+            st.success(rounded_prediction[0])
+        else:
+            st.error("Prediction could not be processed.")
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
         
     st.write("""
              **Now, let's delve deeper into the intricacies of the evaluation metrics employed to gauge the remarkable performance exhibited by the model in question.**
